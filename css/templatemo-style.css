@@ -45,7 +45,7 @@ body {
   overflow-x: hidden;
 }
 .tm-header {
-  background: #400361;
+  background: #008080;
   height: 80px;
   width: 100vw;
   position: fixed;
@@ -267,7 +267,7 @@ body {
 .tm-yellow-btn {
   width: 130px;
   height: 40px;
-  background-color: #400361;
+  background-color: #008080;
   border: medium none;
   color: #ffffff;
   font-size: 12px;
@@ -344,8 +344,8 @@ body {
 }
 #hotelCarTabs > li > a {
   margin-right: 0;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   text-align: center;
   text-transform: uppercase;
   background: transparent
@@ -1317,7 +1317,7 @@ body {
   overflow-x: hidden;
 }
 .tm-header {
-  background: #400361;
+  background: #008080;
   height: 80px;
   width: 100vw;
   position: fixed;
@@ -2597,12 +2597,12 @@ hr {
 }
 .tm-yellow-btn:hover {
   background-color: #e8bd06;
-  border: 3px solid #400361;
-  color: #400361;
+  border: 3px solid #008080;
+  color: #008080;
   font-weight: bold;
 }
 .bottom:hover {
-  color: #400361;
+  color: #008080;
 }
 .media {
   transition: transform 0.02s;

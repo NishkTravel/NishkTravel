@@ -1,7 +1,7 @@
 /* Preloader */
 #preloader {
-	background: #400261 url('../img/preloader.gif') no-repeat center center;
-	background-size: 20%;
+	background: #008080 url('../img/preloader1.gif') no-repeat center center;
+	background-size: 100%;
 	top: 0;
 	height: 100%;
 	width: 100vw;
@@ -13,7 +13,7 @@
 	position: fixed;
 	height: 45px;
 	width: 40px;
-	background-color: #400361;
+	background-color: #008080;
 	right: 30px;
 	bottom: 10px;
 	text-align: center;

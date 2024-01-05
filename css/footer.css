@@ -8,14 +8,14 @@ body {
 
 footer {
   display: flex;
-  background-color: #400361;
+  background-color: #008080;
   padding-bottom: 2.8rem;
   justify-content: center;
   min-height: 30rem;
 }
 
 .bottom-footer {
-  background-color: #400361;
+  background-color: #008080;
   text-align: center;
   color: white;
 }
