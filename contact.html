@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Parytana - Contact</title>
+	<title>NishK Travel - Contact</title>
 	<link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700' rel='stylesheet'
@@ -151,15 +151,17 @@
 			</div>
 			<div class="row reveal">
 				<!-- contact form -->
-				<form class="tm-contact-form" action="https://formspree.io/f/myyvpqjk"
-				method="POST">
+				<form id="myForm" class="tm-contact-form">
+					
 					<div class="col-lg-6 col-md-6">
-						<div id="google-map"></div>
-                    </div>
+						<div class="post-media wow fadeIn">
+						  <img src="img/quote1.png" alt="" class="img-responsive img-rounded" width="500" height="400">
+						</div>
+					</div>
 
 					<div class="col-lg-6 col-md-6 tm-contact-form-input">
 						<h2 class="contactheading">Get in touch</h2>
-						<p class="contact-para">Queries or Feedbacks? We'd love to hear from you. Here's how you can reach us...</p>
+						<p class="contact-para">Queries? Our response rate is less than 12 hours. Get ready for seamless travel expereince. Here's how you can reach us...</p>
 						<div class="form-group">
 							<input type="text" id="contact_name" class="form-control" name="name" placeholder="Full name" />
 						</div>
@@ -167,8 +169,11 @@
 							<input type="email" id="contact_email" class="form-control" name="email" placeholder="Email" />
 						</div>
 						<div class="form-group">
+							<input type="Mobile Number" id="contact_no" class="form-control" name="Contact" placeholder="Mobile" />
+						</div>
+						<div class="form-group">
 							<textarea id="contact_message" class="form-control" rows="6"
-								name="message" placeholder="Drop your querry or message here."></textarea>
+								name="message" placeholder="What's in your mind, describe please!"></textarea>
 						</div>
 						<div class="form-group">
 							<button class="tm-submit-btn" type="submit" name="email-button" 
@@ -192,13 +197,15 @@
         </div>
         <div class= "logo_bot">
             <img src = "img/PARYATANA-new.png">
-			<h3>Subscribe our Newsletter</h3>
+			<h3><b>Subscribe our Newsletter</b> <p>Get latest offers and discounts!</p></h3>
 			<div class="newsletter">
-				<input type="text"name="newsletter"value="" placeholder="Enter your email">
-				<button type="submit" name="submit">Submit </button>
+				<form id="myForm1">
+					<input type="text"name="newsletter"value="" placeholder="Enter your email">
+					<button type="submit" name="submit">Submit </button>
+				</form>
 			</div>
 			<div class="bottom-footer">
-				<p id = "customer">Customer satisfaction is our first priority</p><br>
+				<p id = "customer">Don't worry, we have got you covered. Customer satisfaction is our first priority</p><br>
 				<p>Copyrights &copy <span id="copyrightYear">2023</span> NishK Travel | Designed by <a  href = "#" style = "text-decoration: none;">NishK Travel</a></p>
 			</div>
         </div>
@@ -223,31 +230,56 @@
 	<script type="text/javascript" src="js/templatemo-script.js"></script> <!-- Templatemo Script -->
 	<script type="text/javascript" src="js/update-copyrightYear.js"></script> <!--Updating the copyright year-->
 	
-	<!-- Earlier code for the google map, put into a separate file-->
-	<script type="text/javascript" src="js/gmap.js"></script>
-
-	<!-- Google map -->
-
-	<script async defer
-    src="https://maps.googleapis.com/maps/api/js?
-		key=AIzaSyCy6TqPsb9IY9yM0hOBnm06hnKwNG7TeW8&callback=initMap">
-	</script>
 
 	<script>
-	function initMap() {
-		var dumbo = {lat:28.644800, lng: 77.216721};
-		var mapOptions = {
-			center: dumbo,
-			zoom: 6
-		};
-		var googlemap = new google.maps.Map(document.getElementById("google-map"), mapOptions);
-		var marker = new google.maps.Marker({
-                position: dumbo, // marker pointing to the location.
-                map: googlemap
-            });
-	}
-
-	</script> 
+		document.getElementById('myForm').addEventListener('submit', function(e) {
+			e.preventDefault(); // Prevent the default form submission
+		
+			var xhr = new XMLHttpRequest();
+			xhr.open('POST', 'https://formspree.io/f/xknladgj', true);
+			xhr.setRequestHeader('Accept', 'application/json'); // Expecting a JSON response
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === XMLHttpRequest.DONE) {
+					if (xhr.status === 200) {
+						// Form submission was successful
+						alert('Thank you for getting in touch!');
+						document.getElementById('myForm').reset(); // Reset the form
+					} else {
+						// Handle errors
+						alert('An error occurred. Please try again.');
+					}
+				}
+			};
+		
+			var formData = new FormData(document.getElementById('myForm'));
+			xhr.send(formData);
+		});
+	</script>
+	<script>
+			document.getElementById('myForm1').addEventListener('submit', function(e) {
+				e.preventDefault(); // Prevent the default form submission
+			
+				var xhr = new XMLHttpRequest();
+				xhr.open('POST', 'https://formspree.io/f/xknladgj', true);
+				xhr.setRequestHeader('Accept', 'application/json'); // Expecting a JSON response
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState === XMLHttpRequest.DONE) {
+						if (xhr.status === 200) {
+							// Form submission was successful
+							alert('Thank you for getting in touch!');
+							document.getElementById('myForm1').reset(); // Reset the form
+						} else {
+							// Handle errors
+							alert('An error occurred. Please try again.');
+						}
+					}
+				};
+			
+				var formData = new FormData(document.getElementById('myForm1'));
+				xhr.send(formData);
+			});
+	</script>
+	
 
 	<style>
 	#google-map{
